@@ -11,7 +11,7 @@ funksjoner:
   - phi_hatt
 
 - x_hattGenerator(A_hatt,phi_hatt,w_hatt)
-  - Returner(x_hatt(t))
+  - Returner(x_hatt)
 
 - sammenligneFunkjson(x)
-  - Returner()
+  - Returner(*plott*)
