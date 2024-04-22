@@ -14,8 +14,6 @@ def functionGenerator(SNR):
     A = 1
     wn = np.random.normal(0, sigma,t.shape)
     x = A * np.exp(1j*(w_0*t + phi)) + wn
-    print(SNR)
-    print(dBinvSNR)
     return(x,t)
 
 x, t = functionGenerator(15)
@@ -25,3 +23,16 @@ plt.xlabel('t')
 plt.ylabel('Amplitude')
 plt.grid(True)
 plt.show()
+
+def estimator(k,x):
+    T = 10**(-6)
+    n_0 = -256
+    np.full(256,k)
+    X = np.fft.fft(x,k)
+    m = np.argmax(X)
+    w_hatt = ((2*np.pi*m)/(k*T))
+    phi_hatt = np.angle(np.e**(-1j*w_hatt*n_0*T)*X[m])
+    
+    return w_hatt,phi_hatt
+
+print(estimator(3,x))
