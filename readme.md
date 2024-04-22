@@ -1,19 +1,17 @@
 funksjoner:
 
 - Funksjonsgenerator(SNR)
-  - Returner(x(t))
-- FFT(k)
-  - Returner(X(w))
+  - Returner(x,A)
+- FFT(k,x)
+  - Returner(X)
 
-- A-EstimatorFunskjon(w)
-  - A_hatt
-- phi-EstimatorFunskjon()
-  - phi_hatt
-- w-EstimatorFunskjon()
+- w-EstimatorFunskjon(x)
   - w_hatt
+- phi-EstimatorFunskjon(x,w_hatt)
+  - phi_hatt
 
 - x_hattGenerator(A_hatt,phi_hatt,w_hatt)
   - Returner(x_hatt(t))
 
-- sammenligneFunkjson(x(t))
-  - Returner(score)
+- sammenligneFunkjson(x)
+  - Returner()
